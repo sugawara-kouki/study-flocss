@@ -1,0 +1,32 @@
+// color
+// ----------------------------------------*/
+$white: var(--my-preset--c-white);
+$black: var(--my-preset--c-black);
+$lightBlack: var(--my-preset--c-lightBlack);
+$gray: var(--my-preset--c-gray);
+$darkGray: var(--my-preset--c-darkGray);
+$lightGray: var(--my-preset--c-lightGray);
+$gold: var(--my-preset--c-gold);
+$lightGold: var(--my-preset--c-lightGold);
+$darkGold: var(--my-preset--c-darkGold);
+
+$blue: var(--my-preset--c-blue);
+$orange: var(--my-preset--c-orange);
+$lightOrange: var(--my-preset--c-lightOrange);
+$yellow: var(--my-preset--c-yellow);
+$ref: var(--my-preset--c-red);
+
+// font-family
+// ----------------------------------------*/
+$zenKakuFont: var(--my-preset--font-family--zen-kaku-gothic-new);
+$altGothicFont: var(--my-preset--font-family--alternate-gothic-no2);
+$oswaldFont: var(--my-preset--font-family--oswald);
+$yuGothicFont: var(--my-preset--font-family--yu-gothic);
+
+// easing
+// ----------------------------------------*/
+$easing01: cubic-bezier(0.18, 0.83, 0.24, 0.87);
+$easing02: cubic-bezier(0.98, 0.98, 0.02, 0.97);
+$easing03: cubic-bezier(0, 0.8, 0.2, 1);
+$easing04: cubic-bezier(1, 0, 0, 1);
+$easing05: cubic-bezier(0, 1, 0.7, 1);

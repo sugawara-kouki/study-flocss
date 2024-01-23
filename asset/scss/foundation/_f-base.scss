@@ -1,0 +1,141 @@
+@use "../global/" as *;
+
+@font-face {
+  font-family: "AlternateGothicNo2";
+  src: url("../fonts/AlternateGothicNo2Regular.woff") format("woff"),
+    url("../fonts/AlternateGothicNo2Regular.woff2") format("woff2");
+}
+
+:root {
+  --header-width: 14.5rem;
+  --header-height: 100vh;
+
+  /* デザインで使用している色を定義しておく */
+  --my-preset--c-white: #fff;
+  --my-preset--c-black: #222;
+  --my-preset--c-lightBlack: #2f2f2f;
+  --my-preset--c-gray: #3b3b3b;
+  --my-preset--c-darkGray: #1D1D1D;
+  --my-preset--c-lightGray: #4A4A4A;
+  --my-preset--c-gold: #A69C8F;
+  --my-preset--c-lightGold: #8c7e6c;
+  --my-preset--c-darkGold: #4a4239;
+  --my-preset--c-blue: #319cf4;
+  --my-preset--c-orange: #ffa700;
+  --my-preset--c-lightOrange: #ffc400;
+  --my-preset--c-lightOrange: #ffe000;
+  --my-preset--c-yellow: #ffc400;
+  --my-preset--c-red: #ff0000;
+
+  /* デザインで使用しているフォントをすべて定義しておく */
+  --my-preset--font-family--zen-kaku-gothic-new: "Zen Kaku Gothic New",
+    "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  --my-preset--font-family--alternate-gothic-no2: "AlternateGothicNo2",
+    "Zen Kaku Gothic New", "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  --my-preset--font-family--oswald: "Oswald", "Zen Kaku Gothic New",
+    "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  --my-preset--font-family--yu-gothic: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+
+  @include mq(max960) {
+    --header-width: 100%;
+    --header-height: 6.8rem;
+  }
+}
+
+:root {
+  --my-preset--background: var(--my-preset--c-white);
+  --my-preset--color-text: var(--my-preset--c-black);
+  --my-preset--base-font-family: var(--my-preset--font-family--zen-kaku-gothic-new);
+}
+
+html {
+  font-size: 10px;
+
+  @include mq(min1921) {
+    font-size: calc(100vw / 192);
+  }
+
+  @include mq(max1366) {
+    font-size: calc(100vw / 136.6);
+  }
+
+  @include mq(max960) {
+    font-size: calc(100vw / 37.5);
+  }
+}
+
+body {
+  background: var(--my-preset--background);
+  color: var(--my-preset--color-text);
+  font-family: var(--my-preset--base-font-family);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mq(max960) {
+    font-size: 1.3rem;
+  }
+}
+
+// NOTE:locomotive scroll
+// ページの途中でリロードした時、ページの上部に戻らない時のバグフィックス
+html.has-scroll-smooth,
+html.has-scroll-smooth body {
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+a:not([class]) {
+  color: $blue;
+  text-decoration: underline;
+
+  @include mq(min961) {
+    transition: opacity ease 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+picture {
+  line-height: 0;
+  display: inherit;
+
+  img {
+    vertical-align: baseline;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}

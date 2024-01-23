@@ -1,38 +1,30 @@
 /*------------------------------------------------*
  * foundation
  *------------------------------------------------*/
-@use "./foundation/destyle";
-@use "./foundation/base";
-@use "./foundation/variable";
-@use "./foundation/mediaQuery";
+@use "./foundation/f-destyle";
+@use "./foundation/f-base";
 
 /*------------------------------------------------*
  * layout
  *------------------------------------------------*/
-@use "./layout/header";
-@use "./layout/footer";
+@use "./layout";
+;
 
 /*------------------------------------------------*
- * layout
+ * object
  *------------------------------------------------*/
 
 /*------------------------
  * component
  *------------------------*/
-@use "./object/component/button";
-@use "./object/component/inner";
-@use "./object/component/section";
+@use "./object/component";
 
 /*------------------------
  * project
  *------------------------*/
- @use "./object/project/fv";
- @use "./object/project/theme";
- @use "./object/project/solution";
- @use "./object/project/faq";
- @use "./object/project/cv";
 
- /*------------------------
- * object
+
+/*------------------------
+ * utility
  *------------------------*/
- @use "./object/utility/display";
+@use "./object/utility";
