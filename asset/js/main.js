@@ -1,35 +1,98 @@
 import gsap from "gsap";
+import TextPlugin from "gsap/TextPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.to(".p-target__box", {background: "#0000ff", duration: 1 });
+gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
-// class Person {
+const mv = document.getElementById('js-mv')
+const mask = document.getElementById('js-mask')
+const logo = document.getElementById('js-logo')
+const menu = document.getElementById('js-menu')
+const mvHeading = document.getElementById('js-mv-heading')
+const twitterLogo = document.getElementById('js-twitter')
 
-//   constructor() {
-//     this.addInputEvent();
-//   }
-  
-//   addInputEvent() {
-//     const inputElms = document.querySelectorAll('#text');
-//     inputElms.forEach(function(inputElm) {
-//       inputElm.addEventListener('change', function() {
-//         const elmContent = inputElm.value;
-//         const errorArea = document.querySelector('#js-errorBox');
+const tl = gsap.timeline();
+tl.to(mv, {
+  duration: 2,
+  height: '80%',
+  ease: 'power2.inOut'
+})
+tl.fromTo(twitterLogo, {
+  opacity: 0,
+},
+{
+  opacity: 1,
+  duration: 2,
+}, "-=2")
+.to(mv, {
+  duration: 1.2,
+  width: '90%',
+  ease: 'power2.inOut'
+}, "-=1.5")
+.fromTo(mask, {
+  y: '-100%',
+},
+{
+  duration: 1.2,
+  y: '0%',
+  ease: 'power2.inOut'
+}, "-=1.2")
+.fromTo(logo, {
+  opacity: 0,
+  x: -30
+},
+{
+  duration: 0.5,
+  opacity: 1,
+  x: 0,
+  ease: 'expo.out'
+})
+.fromTo(menu, {
+  opacity: 0,
+  x: -30
+},
+{
+  duration: 0.5,
+  opacity: 1,
+  x: 0,
+  ease: 'expo.out'
+}, "-=0.5")
+.fromTo(mvHeading, {
+  opacity: 0,
+  x: -30
+},
+{
+  duration: 0.5,
+  opacity: 1,
+  x: 0,
+  ease: 'expo.out'
+})
+.to(mvHeading, {
+  duration: 4,
+  text: {
+    value: "This is GSAP DemoSite",
+    delimiter: '',
+  },
+  ease: "ease",
+});
 
-//         if(elmContent.length <= 10) {
-//           errorArea.innerHTML = '';
-//           errorArea.classList.remove('is-active');
-//           return;
-//         }
-//         errorArea.innerHTML = `10文字以内で入力してください。`;
-//         errorArea.classList.add('is-active');
-//       });
-//     })
-//   }
-// }
 
-
-
-// 画面がロードされたらクラスを生成
-window.addEventListener('load', function() {
-  const person = new Person();
+// フッターのスライドインの実装
+const fadeinElms = document.querySelectorAll("#js-fadein");
+fadeinElms.forEach(function(fadeinElm) {
+  gsap.fromTo(fadeinElm, {
+    x: -30,
+    opacity: 0
+  },
+  {
+    opacity: 1,
+    x: 0,
+    duration: 1,
+    ease: 'power1.out',
+    scrollTrigger: {
+      trigger: fadeinElm,
+      start: "top 50%",
+    }
+  });
 });
