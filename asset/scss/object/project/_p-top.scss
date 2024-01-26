@@ -1,0 +1,11 @@
+@use "../../global" as *;
+
+.p-target__box {
+  width: 200px;
+  line-height: 8.0rem;
+  border: solid 2px $black;
+  border-radius: 25px;
+  display: block;
+  text-align: center;
+  background-color: g;
+}

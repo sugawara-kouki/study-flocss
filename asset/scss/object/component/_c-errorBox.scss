@@ -1,0 +1,10 @@
+@use "../../global" as *;
+
+.c-errorBox {
+  @include fontSize(0.8rem, 1.5rem);
+  transition: ease-out .3s;
+  opacity: 0;
+  &.is-active {
+    opacity: 1;
+  }
+}

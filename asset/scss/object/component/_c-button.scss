@@ -1,3 +1,16 @@
 @use "../../global" as *;
 
-.c-button {}
+.c-button {
+  @include fontSize(1.0rem, 1.5rem);
+  border: solid 2px $black;
+  border-radius: 25px;
+
+  @include hover {
+    transition: ease-out .3s;
+    position: relative;
+    left: 0;
+    &:hover {
+      left: 100px;
+    }
+  }
+}

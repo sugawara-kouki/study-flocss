@@ -1,11 +1,5 @@
 @use "../global/" as *;
 
-@font-face {
-  font-family: "AlternateGothicNo2";
-  src: url("../fonts/AlternateGothicNo2Regular.woff") format("woff"),
-    url("../fonts/AlternateGothicNo2Regular.woff2") format("woff2");
-}
-
 :root {
   --header-width: 14.5rem;
   --header-height: 100vh;
@@ -30,8 +24,6 @@
   /* デザインで使用しているフォントをすべて定義しておく */
   --my-preset--font-family--zen-kaku-gothic-new: "Zen Kaku Gothic New",
     "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
-  --my-preset--font-family--alternate-gothic-no2: "AlternateGothicNo2",
-    "Zen Kaku Gothic New", "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
   --my-preset--font-family--oswald: "Oswald", "Zen Kaku Gothic New",
     "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
   --my-preset--font-family--yu-gothic: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
